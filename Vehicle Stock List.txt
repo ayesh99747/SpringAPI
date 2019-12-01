@@ -1,0 +1,130 @@
+Ayeshmantha W
+Vehicle Type : Car
+Plate Number : abc
+Make : qwe
+Model : qwe
+Year Of Manufacture : 2000
+Transmission Type : sad
+Engine Capacity : 32cc
+Number Of Passengers : 2
+Combined Efficiency : 35mpg
+Vehicle Category : Economy
+Number Of Free Miles : 22
+Fuel Type : asd
+Rate : 0.13
+Vehicle Category : Economy
+Schedule For Vehicle - 
+    Pick Up Date : Sun Dec 01 00:00:00 IST 2019
+    Drop Off Date : Tue Dec 03 00:00:00 IST 2019
+Number Of Suitcases : 22
+Number Of Doors : 55
+Number Of BodyType : asd
+
+Ayeshmantha W
+Vehicle Type : Car
+Plate Number : def
+Make : qwe
+Model : qwe
+Year Of Manufacture : 2000
+Transmission Type : sad
+Engine Capacity : 32cc
+Number Of Passengers : 2
+Combined Efficiency : 35mpg
+Vehicle Category : Economy
+Number Of Free Miles : 22
+Fuel Type : asd
+Rate : 0.13
+Vehicle Category : Economy
+Schedule For Vehicle - 
+    Pick Up Date : Tue Dec 03 00:00:00 IST 2019
+    Drop Off Date : Wed Dec 04 00:00:00 IST 2019
+Number Of Suitcases : 22
+Number Of Doors : 55
+Number Of BodyType : asd
+
+Ayeshmantha W
+Vehicle Type : Motorbike
+Plate Number : mno
+Make : zxc
+Model : zxc
+Year Of Manufacture : 2000
+Transmission Type : sad
+Engine Capacity : 32cc
+Number Of Passengers : 2
+Combined Efficiency : 35mpg
+Vehicle Category : Economy
+Number Of Free Miles : 22
+Fuel Type : asd
+Rate : 0.13
+Vehicle Category : Economy
+Schedule For Vehicle - 
+    Pick Up Date : null
+    Drop Off Date : null
+Motorbike Type : asd
+Is Helmet Provided : true
+Is Side Car Present : true
+
+Ayeshmantha W
+Vehicle Type : Motorbike
+Plate Number : pqr
+Make : zxc
+Model : zxc
+Year Of Manufacture : 2000
+Transmission Type : sad
+Engine Capacity : 32cc
+Number Of Passengers : 2
+Combined Efficiency : 35mpg
+Vehicle Category : Economy
+Number Of Free Miles : 22
+Fuel Type : asd
+Rate : 0.13
+Vehicle Category : Economy
+Schedule For Vehicle - 
+    Pick Up Date : null
+    Drop Off Date : null
+Motorbike Type : asd
+Is Helmet Provided : true
+Is Side Car Present : true
+
+Ayeshmantha W
+Vehicle Type : Van
+Plate Number : ghi
+Make : asd
+Model : asd
+Year Of Manufacture : 2000
+Transmission Type : sad
+Engine Capacity : 32cc
+Number Of Passengers : 2
+Combined Efficiency : 35mpg
+Vehicle Category : Economy
+Number Of Free Miles : 22
+Fuel Type : asd
+Rate : 0.13
+Vehicle Category : Economy
+Schedule For Vehicle - 
+    Pick Up Date : null
+    Drop Off Date : null
+Number Of Suitcases : 2
+Number Of Doors : 5
+
+Ayeshmantha W
+Vehicle Type : Van
+Plate Number : jkl
+Make : asd
+Model : asd
+Year Of Manufacture : 2000
+Transmission Type : sad
+Engine Capacity : 32cc
+Number Of Passengers : 2
+Combined Efficiency : 35mpg
+Vehicle Category : Economy
+Number Of Free Miles : 22
+Fuel Type : asd
+Rate : 0.13
+Vehicle Category : Economy
+Schedule For Vehicle - 
+    Pick Up Date : null
+    Drop Off Date : null
+Number Of Suitcases : 22
+Number Of Doors : 55
+
