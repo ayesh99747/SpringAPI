@@ -30,10 +30,8 @@ public class Motorbike extends Vehicle {
     }
 
     private void setMotorbikeType(String motorbikeType) {
-        if ((!motorbikeType.equals("")) && (motorbikeType != null) && (motorbikeType.matches("^[a-zA-Z]*$"))) {
+        if (InputValidator.stringWithLetters(motorbikeType)) {
             this.motorbikeType = motorbikeType;
-        } else {
-            System.out.println("Invalid motorbike type!");
         }
     }
 

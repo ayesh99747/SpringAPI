@@ -19,9 +19,9 @@ public class Car extends Vehicle {
     //The following is a constructor for the car object
     public Car(String plateNumber, String make, String model, String yearOfManufacture, String transmissionType, String engineCapacity, String numberOfPassengers, String combinedEfficiency, String vehicleCategory, int numberOfFreeMiles, String fuelType, BigDecimal rate, Schedule scheduleForVehicle, String numberOfSuitcases, String numberOfDoors, String bodyType) {
         super(plateNumber, make, model, yearOfManufacture, transmissionType, engineCapacity, numberOfPassengers, combinedEfficiency, vehicleCategory, numberOfFreeMiles, fuelType, rate, scheduleForVehicle);
-        this.numberOfSuitcases = numberOfSuitcases;
-        this.numberOfDoors = numberOfDoors;
-        this.bodyType = bodyType;
+        this.setNumberOfSuitcases(numberOfSuitcases);
+        this.setNumberOfDoors(numberOfDoors);
+        this.setBodyType(bodyType);
     }
 
     //The following are the getter and setter methods
@@ -29,11 +29,9 @@ public class Car extends Vehicle {
         return numberOfSuitcases;
     }
 
-    private void setNumberOfSuitcases(String numberOfSuitcases) {
-        if ((!numberOfSuitcases.equals("")) && (numberOfSuitcases != null) && (numberOfSuitcases.matches("^[0-9]*$"))) {
+    public void setNumberOfSuitcases(String numberOfSuitcases) {
+        if (InputValidator.stringWithNumbers(numberOfSuitcases)) {
             this.numberOfSuitcases = numberOfSuitcases;
-        } else {
-            System.out.println("Invalid Number of Suitcases!");
         }
     }
 
@@ -41,11 +39,9 @@ public class Car extends Vehicle {
         return numberOfDoors;
     }
 
-    private void setNumberOfDoors(String numberOfDoors) {
-        if ((!numberOfDoors.equals("")) && (numberOfDoors != null) && (numberOfDoors.matches("^[0-9]*$"))) {
+    public void setNumberOfDoors(String numberOfDoors) {
+        if (InputValidator.stringWithNumbers(numberOfDoors)) {
             this.numberOfDoors = numberOfDoors;
-        } else {
-            System.out.println("Invalid number of doors!");
         }
     }
 
@@ -53,11 +49,9 @@ public class Car extends Vehicle {
         return bodyType;
     }
 
-    private void setBodyType(String bodyType) {
-        if ((!bodyType.equals("")) && (bodyType != null) && (bodyType.matches("^[a-zA-Z]*$"))) {
+    public void setBodyType(String bodyType) {
+        if (InputValidator.stringWithLetters(bodyType)) {
             this.bodyType = bodyType;
-        } else {
-            System.out.println("Invalid body type!");
         }
     }
 

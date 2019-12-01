@@ -137,7 +137,7 @@ public class ConsoleMenu {
                 String plateNumber = "";
                 while (true) {
                     plateNumber = sc.nextLine().trim();
-                    if (InputValidator.stringWithNumbersAndLetters(plateNumber) == true) {
+                    if (InputValidator.plateNumbers(plateNumber) == true) {
                         if (vm1.isVehiclePresent(plateNumber) == false) {
                             System.out.println("The plate number is : " + plateNumber);
                             break;

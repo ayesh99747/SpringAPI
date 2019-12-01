@@ -18,8 +18,8 @@ public class Van extends Vehicle {
     //The following is the van constructor
     public Van(String plateNumber, String make, String model, String yearOfManufacture, String transmissionType, String engineCapacity, String numberOfPassengers, String combinedEfficiency, String vehicleCategory, int numberOfFreeMiles, String fuelType, BigDecimal rate, Schedule scheduleForVehicle, String numberOfSuitcases, String numberOfDoors) {
         super(plateNumber, make, model, yearOfManufacture, transmissionType, engineCapacity, numberOfPassengers, combinedEfficiency, vehicleCategory, numberOfFreeMiles, fuelType, rate, scheduleForVehicle);
-        this.numberOfSuitcases = numberOfSuitcases;
-        this.numberOfDoors = numberOfDoors;
+        this.setNumberOfSuitcases(numberOfSuitcases);
+        this.setNumberOfDoors(numberOfDoors);
     }
 
     //THe following are the getter and setter methods
@@ -28,10 +28,8 @@ public class Van extends Vehicle {
     }
 
     private void setNumberOfSuitcases(String numberOfSuitcases) {
-        if ((!numberOfSuitcases.equals("")) && (numberOfSuitcases != null) && (numberOfSuitcases.matches("^[0-9]*$"))) {
+        if (InputValidator.stringWithNumbers(numberOfSuitcases)) {
             this.numberOfSuitcases = numberOfSuitcases;
-        } else {
-            System.out.println("Invalid Number of Suitcases!");
         }
     }
 
@@ -40,10 +38,8 @@ public class Van extends Vehicle {
     }
 
     private void setNumberOfDoors(String numberOfDoors) {
-        if ((!numberOfDoors.equals("")) && (numberOfDoors != null) && (numberOfDoors.matches("^[0-9]*$"))) {
+        if (InputValidator.stringWithNumbers(numberOfDoors)) {
             this.numberOfDoors = numberOfDoors;
-        } else {
-            System.out.println("Invalid number of doors!");
         }
     }
 

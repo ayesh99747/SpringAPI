@@ -10,6 +10,10 @@ public class InputValidator {
     }
 
     public static boolean stringWithNumbersAndLetters(String input) {
+        return (!input.equals("")) && (input != null) && (input.matches("^[a-zA-Z0-9]*$"));
+    }
+
+    public static boolean plateNumbers(String input) {
         return (!input.equals("")) && (input != null) && (input.matches("^[a-zA-Z0-9-]*$"));
     }
 

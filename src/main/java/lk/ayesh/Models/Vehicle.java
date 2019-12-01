@@ -48,17 +48,17 @@ public abstract class Vehicle implements Comparable<Vehicle> {
 
     //The constructor is used to declare a new vehicle
     public Vehicle(String plateNumber, String make, String model, String yearOfManufacture, String transmissionType, String engineCapacity, String numberOfPassengers, String combinedEfficiency, String vehicleCategory, int numberOfFreeMiles, String fuelType, BigDecimal rate, Schedule scheduleForVehicle) {
-        this.plateNumber = plateNumber;
-        this.make = make;
-        this.model = model;
-        this.yearOfManufacture = yearOfManufacture;
-        this.transmissionType = transmissionType;
+        this.setPlateNumber(plateNumber);
+        this.setMake(make);
+        this.setModel(model);
+        this.setYearOfManufacture(yearOfManufacture);
+        this.setTransmissionType(transmissionType);
         this.setEngineCapacity(engineCapacity);
-        this.numberOfPassengers = numberOfPassengers;
+        this.setNumberOfPassengers(numberOfPassengers);
         this.setCombinedEfficiency(combinedEfficiency);
-        this.vehicleCategory = vehicleCategory;
-        this.numberOfFreeMiles = numberOfFreeMiles;
-        this.fuelType = fuelType;
+        this.setVehicleCategory(vehicleCategory);
+        this.setNumberOfFreeMiles(numberOfFreeMiles);
+        this.setFuelType(fuelType);
         this.rate = rate;
         this.scheduleForVehicle = scheduleForVehicle;
     }
@@ -82,7 +82,9 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setPlateNumber(String plateNumber) {
-        this.plateNumber = plateNumber;
+        if (InputValidator.plateNumbers(plateNumber)) {
+            this.plateNumber = plateNumber;
+        }
     }
 
     public String getMake() {
@@ -90,7 +92,9 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setMake(String make) {
-        this.make = make;
+        if (InputValidator.stringWithLetters(make)) {
+            this.make = make;
+        }
     }
 
     public String getModel() {
@@ -98,7 +102,9 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setModel(String model) {
-        this.model = model;
+        if (InputValidator.stringWithNumbersAndLetters(model)) {
+            this.model = model;
+        }
     }
 
     public String getYearOfManufacture() {
@@ -106,7 +112,9 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setYearOfManufacture(String yearOfManufacture) {
-        this.yearOfManufacture = yearOfManufacture;
+        if (InputValidator.stringWithNumbers(yearOfManufacture)) {
+            this.yearOfManufacture = yearOfManufacture;
+        }
     }
 
     public String getTransmissionType() {
@@ -114,7 +122,9 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setTransmissionType(String transmissionType) {
-        this.transmissionType = transmissionType;
+        if (InputValidator.stringWithLetters(transmissionType)) {
+            this.transmissionType = transmissionType;
+        }
     }
 
     public String getEngineCapacity() {
@@ -123,7 +133,9 @@ public abstract class Vehicle implements Comparable<Vehicle> {
 
     public void setEngineCapacity(String engineCapacity) {
         if (engineCapacity.charAt(engineCapacity.length() - 1) != 'c') {
-            this.engineCapacity = engineCapacity + "cc";
+            if (InputValidator.stringWithNumbers(engineCapacity)){
+                this.engineCapacity = engineCapacity + "cc";
+            }
         } else {
             this.engineCapacity = engineCapacity;
         }
@@ -134,7 +146,9 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setNumberOfPassengers(String numberOfPassengers) {
-        this.numberOfPassengers = numberOfPassengers;
+        if (InputValidator.stringWithNumbers(numberOfPassengers)){
+            this.numberOfPassengers = numberOfPassengers;
+        }
     }
 
     public String getCombinedEfficiency() {
@@ -143,7 +157,9 @@ public abstract class Vehicle implements Comparable<Vehicle> {
 
     public void setCombinedEfficiency(String combinedEfficiency) {
         if (combinedEfficiency.charAt(combinedEfficiency.length() - 1) != 'g') {
-            this.combinedEfficiency = combinedEfficiency + "mpg";
+            if (InputValidator.stringWithNumbers(combinedEfficiency)){
+                this.combinedEfficiency = combinedEfficiency + "mpg";
+            }
         } else {
             this.combinedEfficiency = combinedEfficiency;
         }
@@ -154,7 +170,9 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setVehicleCategory(String vehicleCategory) {
-        this.vehicleCategory = vehicleCategory;
+        if (InputValidator.stringWithLetters(vehicleCategory)){
+            this.vehicleCategory = vehicleCategory;
+        }
     }
 
     public int getNumberOfFreeMiles() {
@@ -162,7 +180,9 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setNumberOfFreeMiles(int numberOfFreeMiles) {
-        this.numberOfFreeMiles = numberOfFreeMiles;
+        if (InputValidator.integers(numberOfFreeMiles)){
+            this.numberOfFreeMiles = numberOfFreeMiles;
+        }
     }
 
     public String getFuelType() {
@@ -170,7 +190,9 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setFuelType(String fuelType) {
-        this.fuelType = fuelType;
+        if (InputValidator.stringWithLetters(fuelType)){
+            this.fuelType = fuelType;
+        }
     }
 
     public BigDecimal getRate() {
