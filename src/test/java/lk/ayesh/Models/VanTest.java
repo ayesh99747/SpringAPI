@@ -8,14 +8,13 @@ import java.math.MathContext;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class CarTest {
-
-    private Car vehicle;
+class VanTest {
+    private Van vehicle;
 
     @BeforeEach
     void initEach() {
         MathContext mc = new MathContext(2);
-        vehicle = new Car("def", "asd", "asd", "2000", "asd", "32", "2", "35", "Economy", 22, "asd", new BigDecimal("0.129", mc), new Schedule(), "22", "55", "asd");
+        vehicle = new Van("def", "asd", "asd", "2000", "asd", "32", "2", "35", "Economy", 22, "asd", new BigDecimal("0.129", mc), new Schedule(), "22", "55");
     }
 
     @Test
@@ -40,14 +39,4 @@ class CarTest {
         assertTrue(vehicle.getNumberOfDoors().equals("11"));
     }
 
-    @Test
-    void getBodyType() {
-        assertTrue(vehicle.getBodyType().equals("asd"));
-    }
-
-    @Test
-    void setBodyType() {
-        vehicle.setBodyType("qwe");
-        assertTrue(vehicle.getBodyType().equals("qwe"));
-    }
 }

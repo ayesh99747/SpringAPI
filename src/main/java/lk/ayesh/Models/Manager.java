@@ -19,9 +19,9 @@ public class Manager {
     private String password;
 
     public Manager(String employeeID, String username, String password) {
-        this.employeeID = employeeID;
-        this.username = username;
-        this.password = password;
+        this.setEmployeeID(employeeID);
+        this.setUsername(username);
+        this.setPassword(password);
     }
 
     public String getId() {
@@ -37,7 +37,9 @@ public class Manager {
     }
 
     public void setEmployeeID(String employeeID) {
-        this.employeeID = employeeID;
+        if (InputValidator.stringWithNumbersAndLetters(employeeID)) {
+            this.employeeID = employeeID;
+        }
     }
 
     public String getUsername() {
@@ -45,7 +47,9 @@ public class Manager {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        if (InputValidator.anyString(username)) {
+            this.username = username;
+        }
     }
 
     public String getPassword() {
@@ -53,7 +57,9 @@ public class Manager {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        if (InputValidator.anyString(password)) {
+            this.password = password;
+        }
     }
 
     @Override

@@ -27,7 +27,7 @@ public class Van extends Vehicle {
         return numberOfSuitcases;
     }
 
-    private void setNumberOfSuitcases(String numberOfSuitcases) {
+    public void setNumberOfSuitcases(String numberOfSuitcases) {
         if (InputValidator.stringWithNumbers(numberOfSuitcases)) {
             this.numberOfSuitcases = numberOfSuitcases;
         }
@@ -37,7 +37,7 @@ public class Van extends Vehicle {
         return numberOfDoors;
     }
 
-    private void setNumberOfDoors(String numberOfDoors) {
+    public void setNumberOfDoors(String numberOfDoors) {
         if (InputValidator.stringWithNumbers(numberOfDoors)) {
             this.numberOfDoors = numberOfDoors;
         }

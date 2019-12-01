@@ -1,13 +1,12 @@
 package lk.ayesh.Models;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class VehicleTest {
 
@@ -16,7 +15,7 @@ class VehicleTest {
     @BeforeEach
     void initEach() {
         MathContext mc = new MathContext(2);
-        vehicle = new Car("def", "asd", "asd", "2000", "asd", "32", "2", "35", "Economy", 22, "asd", new BigDecimal("0.129",mc),new Schedule(), "22", "55","asd");
+        vehicle = new Car("def", "asd", "asd", "2000", "asd", "32", "2", "35", "Economy", 22, "asd", new BigDecimal("0.129", mc), new Schedule(), "22", "55", "asd");
     }
 
     @Test
@@ -143,14 +142,14 @@ class VehicleTest {
     @Test
     void getRate() {
         MathContext mc = new MathContext(2);
-        assertTrue(vehicle.getRate().equals(new BigDecimal("0.129",mc)));
+        assertTrue(vehicle.getRate().equals(new BigDecimal("0.129", mc)));
     }
 
     @Test
     void setRate() {
         MathContext mc = new MathContext(2);
-        vehicle.setRate(new BigDecimal("5.199",mc));
-        assertTrue(vehicle.getRate().equals(new BigDecimal("5.199",mc)));
+        vehicle.setRate(new BigDecimal("5.199", mc));
+        assertTrue(vehicle.getRate().equals(new BigDecimal("5.199", mc)));
     }
 
 }

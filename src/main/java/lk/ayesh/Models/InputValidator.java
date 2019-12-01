@@ -26,4 +26,11 @@ public class InputValidator {
     }
 
 
+    public static boolean emailAddress(String emailAddress) {
+        return (!emailAddress.equals("")) && (emailAddress != null) && (emailAddress.matches("^[a-zA-Z0-9.@]*$"));
+    }
+
+    public static boolean anyString(String password) {
+        return (!password.equals("")) && (password != null);
+    }
 }

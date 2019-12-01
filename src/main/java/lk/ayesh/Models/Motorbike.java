@@ -20,8 +20,8 @@ public class Motorbike extends Vehicle {
     public Motorbike(String plateNumber, String make, String model, String yearOfManufacture, String transmissionType, String engineCapacity, String numberOfPassengers, String combinedEfficiency, String vehicleCategory, int numberOfFreeMiles, String fuelType, BigDecimal rate, Schedule scheduleForVehicle, String motorbikeType, boolean isHelmetProvided, boolean isSideCarPresent) {
         super(plateNumber, make, model, yearOfManufacture, transmissionType, engineCapacity, numberOfPassengers, combinedEfficiency, vehicleCategory, numberOfFreeMiles, fuelType, rate, scheduleForVehicle);
         setMotorbikeType(motorbikeType);
-        this.isHelmetProvided = isHelmetProvided;
-        this.isSideCarPresent = isSideCarPresent;
+        this.setHelmetProvided(isHelmetProvided);
+        this.setSideCarPresent(isSideCarPresent);
     }
 
     //The following are the getter and setter method
@@ -29,7 +29,7 @@ public class Motorbike extends Vehicle {
         return motorbikeType;
     }
 
-    private void setMotorbikeType(String motorbikeType) {
+    public void setMotorbikeType(String motorbikeType) {
         if (InputValidator.stringWithLetters(motorbikeType)) {
             this.motorbikeType = motorbikeType;
         }
@@ -39,8 +39,16 @@ public class Motorbike extends Vehicle {
         return isHelmetProvided;
     }
 
+    public void setHelmetProvided(boolean helmetProvided) {
+        isHelmetProvided = helmetProvided;
+    }
+
     public boolean isSideCarPresent() {
         return isSideCarPresent;
+    }
+
+    public void setSideCarPresent(boolean sideCarPresent) {
+        isSideCarPresent = sideCarPresent;
     }
 
     //The following is the toString() method

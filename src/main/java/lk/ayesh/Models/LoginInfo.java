@@ -5,8 +5,8 @@ public class LoginInfo {
     private String password;
 
     public LoginInfo(String username, String password) {
-        this.username = username;
-        this.password = password;
+        this.setUsername(username);
+        this.setPassword(password);
     }
 
     public String getUsername() {
@@ -14,7 +14,9 @@ public class LoginInfo {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        if (InputValidator.stringWithNumbersAndLetters(username)) {
+            this.username = username;
+        }
     }
 
     public String getPassword() {
@@ -22,7 +24,9 @@ public class LoginInfo {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        if (InputValidator.stringWithNumbersAndLetters(password)) {
+            this.password = password;
+        }
     }
 
     @Override

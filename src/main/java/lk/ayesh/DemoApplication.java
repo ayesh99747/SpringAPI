@@ -4,7 +4,10 @@ import lk.ayesh.Controllers.BookingManagerManager;
 import lk.ayesh.Controllers.CustomerLoginInfoManager;
 import lk.ayesh.Controllers.ManagerLoginInfoManager;
 import lk.ayesh.Controllers.WestminsterRentalVehicleManager;
-import lk.ayesh.Models.*;
+import lk.ayesh.Models.Booking;
+import lk.ayesh.Models.Customer;
+import lk.ayesh.Models.Manager;
+import lk.ayesh.Models.Vehicle;
 import lk.ayesh.Repositories.BookingRepository;
 import lk.ayesh.Repositories.CustomerRepository;
 import lk.ayesh.Repositories.ManagerRepository;
@@ -14,8 +17,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
 import java.util.List;
 
 @SpringBootApplication

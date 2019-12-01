@@ -133,7 +133,7 @@ public abstract class Vehicle implements Comparable<Vehicle> {
 
     public void setEngineCapacity(String engineCapacity) {
         if (engineCapacity.charAt(engineCapacity.length() - 1) != 'c') {
-            if (InputValidator.stringWithNumbers(engineCapacity)){
+            if (InputValidator.stringWithNumbers(engineCapacity)) {
                 this.engineCapacity = engineCapacity + "cc";
             }
         } else {
@@ -146,7 +146,7 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setNumberOfPassengers(String numberOfPassengers) {
-        if (InputValidator.stringWithNumbers(numberOfPassengers)){
+        if (InputValidator.stringWithNumbers(numberOfPassengers)) {
             this.numberOfPassengers = numberOfPassengers;
         }
     }
@@ -157,7 +157,7 @@ public abstract class Vehicle implements Comparable<Vehicle> {
 
     public void setCombinedEfficiency(String combinedEfficiency) {
         if (combinedEfficiency.charAt(combinedEfficiency.length() - 1) != 'g') {
-            if (InputValidator.stringWithNumbers(combinedEfficiency)){
+            if (InputValidator.stringWithNumbers(combinedEfficiency)) {
                 this.combinedEfficiency = combinedEfficiency + "mpg";
             }
         } else {
@@ -170,7 +170,7 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setVehicleCategory(String vehicleCategory) {
-        if (InputValidator.stringWithLetters(vehicleCategory)){
+        if (InputValidator.stringWithLetters(vehicleCategory)) {
             this.vehicleCategory = vehicleCategory;
         }
     }
@@ -180,7 +180,7 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setNumberOfFreeMiles(int numberOfFreeMiles) {
-        if (InputValidator.integers(numberOfFreeMiles)){
+        if (InputValidator.integers(numberOfFreeMiles)) {
             this.numberOfFreeMiles = numberOfFreeMiles;
         }
     }
@@ -190,7 +190,7 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setFuelType(String fuelType) {
-        if (InputValidator.stringWithLetters(fuelType)){
+        if (InputValidator.stringWithLetters(fuelType)) {
             this.fuelType = fuelType;
         }
     }

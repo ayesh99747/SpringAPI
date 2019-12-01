@@ -28,11 +28,11 @@ public class Customer {
     private String password;
 
     public Customer(String customerName, String emailAddress, String driversLicenseNumber, String username, String password) {
-        this.customerName = customerName;
-        this.emailAddress = emailAddress;
-        this.driversLicenseNumber = driversLicenseNumber;
-        this.username = username;
-        this.password = password;
+        this.setCustomerName(customerName);
+        this.setEmailAddress(emailAddress);
+        this.setDriversLicenseNumber(driversLicenseNumber);
+        this.setUsername(username);
+        this.setPassword(password);
     }
 
     public String getId() {
@@ -48,7 +48,9 @@ public class Customer {
     }
 
     public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+        if (InputValidator.stringWithLetters(customerName)) {
+            this.customerName = customerName;
+        }
     }
 
     public String getEmailAddress() {
@@ -56,7 +58,9 @@ public class Customer {
     }
 
     public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
+        if (InputValidator.emailAddress(emailAddress)) {
+            this.emailAddress = emailAddress;
+        }
     }
 
     public String getDriversLicenseNumber() {
@@ -64,7 +68,9 @@ public class Customer {
     }
 
     public void setDriversLicenseNumber(String driversLicenseNumber) {
-        this.driversLicenseNumber = driversLicenseNumber;
+        if (InputValidator.stringWithNumbers(driversLicenseNumber)) {
+            this.driversLicenseNumber = driversLicenseNumber;
+        }
     }
 
     public String getUsername() {
@@ -72,7 +78,9 @@ public class Customer {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        if (InputValidator.stringWithLetters(username)) {
+            this.username = username;
+        }
     }
 
     public String getPassword() {
@@ -80,7 +88,9 @@ public class Customer {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        if (InputValidator.anyString(password)) {
+            this.password = password;
+        }
     }
 
     @Override
