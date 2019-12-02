@@ -5,6 +5,12 @@ import lk.ayesh.Models.Customer;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is the customer login info manager
+ *
+ * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
+ */
+
 public class CustomerLoginInfoManager {
     private static List<Customer> listOfCustomers = new ArrayList<Customer>();
 

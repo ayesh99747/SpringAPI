@@ -5,6 +5,11 @@ import lk.ayesh.Models.Manager;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is the manager login info class
+ *
+ * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
+ */
 public class ManagerLoginInfoManager {
     private static List<Manager> listOfManagers = new ArrayList<Manager>();//This is the list of managers
 

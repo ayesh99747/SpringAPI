@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * This class is the customer login info api class
+ *
+ * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
+ */
+
 @Controller
 @RequestMapping("/api/customers")
 public class CustomerLoginInfoApi {

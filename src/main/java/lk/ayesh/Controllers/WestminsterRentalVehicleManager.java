@@ -135,10 +135,9 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
             String[] vehicleAttributes = {"Plate Number", "Make", "Model", "Year of Manufacture", "Transmission Type", "Engine Capacity", "Number of Passengers", "Combined Efficiency", "Vehicle Category", "Number of Free miles", "Fuel Type", "Rate", "Pickup Date", "Drop Off Date", "Number of Suitcases", "Number of Doors", "Body Type", "Motorbike Type", "Helmet Provided", "Side Car Present"};
 
             // This creates a new Excel Workbook
-            Workbook workbook = new XSSFWorkbook(); // new HSSFWorkbook() for generating `.xls` file
+            Workbook workbook = new XSSFWorkbook();
 
-            /* CreationHelper helps us create instances of various things like DataFormat,
-            Hyperlink, RichTextString etc, in a format (HSSF, XSSF) independent way */
+
             CreationHelper createHelper = workbook.getCreationHelper();
 
             // Create a Sheet
@@ -157,7 +156,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
             // Create a Row
             Row headerRow = sheet.createRow(0);
 
-            // Create cells
+            // Create row headers
             for (int i = 0; i < vehicleAttributes.length; i++) {
                 Cell cell = headerRow.createCell(i);
                 cell.setCellValue(vehicleAttributes[i]);
@@ -168,7 +167,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
             CellStyle dateCellStyle = workbook.createCellStyle();
             dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd-MM-yyyy"));
 
-            // Create Other rows and cells with employees data
+            // Create Other rows and cells with vehicle data
             int rowNum = 1;
             for (Vehicle vehicle : sortedListOfVehicles) {
                 Row row = sheet.createRow(rowNum++);

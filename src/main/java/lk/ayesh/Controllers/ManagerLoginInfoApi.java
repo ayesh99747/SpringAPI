@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * This class is the manager login info class
+ *
+ * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
+ */
+
 @Controller
 @RequestMapping("/api/managers")
 public class ManagerLoginInfoApi {

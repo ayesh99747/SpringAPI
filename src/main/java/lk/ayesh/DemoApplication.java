@@ -21,6 +21,12 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.List;
 
+/**
+ * This class is the main class which is the starting point of the application
+ *
+ * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
+ */
+
 @SpringBootApplication
 @EnableScheduling
 public class DemoApplication implements CommandLineRunner {
@@ -42,26 +48,30 @@ public class DemoApplication implements CommandLineRunner {
         SpringApplication.run(DemoApplication.class, args);
     }
 
+    //This is called once the program has started
     @Override
     public void run(String... args) throws Exception {
+        //Vehicles are read from the database and inserted to the list
         System.out.println("Vehicles retrieved from db.");
         List<Vehicle> listOfVehiclesFromDb = vehicleRepository.findAll();
         WestminsterRentalVehicleManager.addVehicleFromDatabase(listOfVehiclesFromDb);
 
+        //Customers are read from the database and inserted to the list
         System.out.println();
         System.out.println("Customers retrieved from db.");
         List<Customer> listOfCustomersFromDb = customerRepository.findAll();
         CustomerLoginInfoManager.addCustomerFromDatabase(listOfCustomersFromDb);
 
+        //Managers are read from the database and inserted to the list
         System.out.println();
         System.out.println("Managers retrieved from db.");
         List<Manager> listOfManagersFromDb = managerRepository.findAll();
         ManagerLoginInfoManager.addManagersFromDatabase(listOfManagersFromDb);
 
+        //Bookings are read from the database and inserted to the list
         System.out.println();
         System.out.println("Bookings retrieved from db.");
         List<Booking> listOfBookingsFromDb = bookingRepository.findAll();
-        System.out.println();
         BookingManagerManager.addBookingsFromDatabase(listOfBookingsFromDb);
 
     }

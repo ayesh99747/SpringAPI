@@ -7,7 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.List;
-
+/**
+ * This class is the refresh class
+ * This is called everyday midnight
+ *
+ * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
+ */
 public class Refresh {
     @Autowired
     private VehicleRepository vehicleRepository;

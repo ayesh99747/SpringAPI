@@ -5,25 +5,33 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+/**
+ * This class is the Manager class
+ *
+ * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
+ */
+
 @Data
 @Document(collection = "Managers")
 public class Manager {
     @Id
-    private String Id;
+    private String Id;  //This is a manger id
 
     @Field("employeeID")
-    private String employeeID;
+    private String employeeID;  //This is the employee id of teh manager
     @Field("username")
-    private String username;
+    private String username;    //This is the username
     @Field("password")
-    private String password;
+    private String password;    //This is the password
 
+    //This is the manager constructor
     public Manager(String employeeID, String username, String password) {
         this.setEmployeeID(employeeID);
         this.setUsername(username);
         this.setPassword(password);
     }
 
+    //The following are getter and setter methods
     public String getId() {
         return Id;
     }
@@ -62,6 +70,7 @@ public class Manager {
         }
     }
 
+    //This is the toString method
     @Override
     public String toString() {
         return "Manager{" +

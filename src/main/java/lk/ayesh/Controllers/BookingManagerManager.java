@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is the booking manager class
+ *
+ * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
+ */
 @Service
 public class BookingManagerManager {
     private static List<Booking> listOfBookings = new ArrayList<Booking>();//This is the bookings list

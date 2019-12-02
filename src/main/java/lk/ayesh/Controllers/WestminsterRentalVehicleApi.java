@@ -9,6 +9,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * This class is the westminster rental vehicle api class
+ *
+ * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
+ */
+
 @Controller
 @RequestMapping("/api/vehicles")
 public class WestminsterRentalVehicleApi {

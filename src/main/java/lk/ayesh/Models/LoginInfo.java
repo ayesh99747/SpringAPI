@@ -1,7 +1,7 @@
 package lk.ayesh.Models;
 
 /**
- * This class is the Login Info
+ * This class is the Login Info class
  *
  * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
  */
