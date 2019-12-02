@@ -90,7 +90,7 @@ public class Customer {
     }
 
     public void setPassword(String password) {
-        if (InputValidator.anyString(password)) {
+        if (InputValidator.passwords(password)) {
             this.password = password;
         }
     }

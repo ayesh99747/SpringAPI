@@ -55,7 +55,7 @@ public class Manager {
     }
 
     public void setUsername(String username) {
-        if (InputValidator.anyString(username)) {
+        if (InputValidator.passwords(username)) {
             this.username = username;
         }
     }
@@ -65,7 +65,7 @@ public class Manager {
     }
 
     public void setPassword(String password) {
-        if (InputValidator.anyString(password)) {
+        if (InputValidator.passwords(password)) {
             this.password = password;
         }
     }

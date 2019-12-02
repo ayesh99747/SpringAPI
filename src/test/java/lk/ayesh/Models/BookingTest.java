@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class BookingTest {
 
@@ -14,61 +13,71 @@ class BookingTest {
 
     @BeforeEach
     void initEach() {
-        booking = new Booking("asd", "asd", new Date(), new Date(), new Date());
+        booking = new Booking("asd", "asd", new Date(2019,12,1), new Date(2019,12,1), new Date(2019,12,1));
     }
 
     @Test
     void getUsername() {
         assertTrue(booking.getUsername().equals("asd"));
+        assertFalse(booking.getUsername().equals("qwe"));
     }
 
     @Test
     void setUsername() {
         booking.setUsername("test");
         assertTrue(booking.getUsername().equals("test"));
+        assertFalse(booking.getUsername().equals("asd"));
     }
 
     @Test
     void getPlateNumber() {
         assertTrue(booking.getPlateNumber().equals("asd"));
+        assertFalse(booking.getPlateNumber().equals("qwe"));
     }
 
     @Test
     void setPlateNumber() {
         booking.setPlateNumber("test");
         assertTrue(booking.getPlateNumber().equals("test"));
+        assertFalse(booking.getPlateNumber().equals("zxc"));
     }
 
     @Test
     void getPickUpDate() {
-        assertTrue(booking.getPickUpDate().equals(new Date()));
+        assertTrue(booking.getPickUpDate().equals(new Date(2019,12,1)));
+        assertFalse(booking.getPickUpDate().equals(new Date(2019,12,2)));
     }
 
     @Test
     void setPickUpDate() {
-        booking.setPickUpDate(new Date());
-        assertTrue(booking.getPickUpDate().equals(new Date()));
+        booking.setPickUpDate(new Date(2019,12,22));
+        assertTrue(booking.getPickUpDate().equals(new Date(2019,12,22)));
+        assertFalse(booking.getPickUpDate().equals(new Date(2019,12,2)));
     }
 
     @Test
     void getDropOffDate() {
-        assertFalse(booking.getDropOffDate().equals(new Date()));
+        assertTrue(booking.getDropOffDate().equals(new Date(2019,12,1)));
+        assertFalse(booking.getDropOffDate().equals(new Date(2019,12,2)));
     }
 
     @Test
     void setDropOffDate() {
-        booking.setDropOffDate(new Date());
-        assertTrue(booking.getDropOffDate().equals(new Date()));
+        booking.setDropOffDate(new Date(2019,12,22));
+        assertTrue(booking.getDropOffDate().equals(new Date(2019,12,22)));
+        assertFalse(booking.getDropOffDate().equals(new Date(2019,12,1)));
     }
 
     @Test
     void getBookedDate() {
-        assertTrue(booking.getBookedDate().equals(new Date()));
+        assertTrue(booking.getBookedDate().equals(new Date(2019,12,1)));
+        assertFalse(booking.getBookedDate().equals(new Date(2019,12,2)));
     }
 
     @Test
     void setBookedDate() {
-        booking.setBookedDate(new Date());
-        assertTrue(booking.getBookedDate().equals(new Date()));
+        booking.setBookedDate(new Date(2019,12,22));
+        assertTrue(booking.getBookedDate().equals(new Date(2019,12,22)));
+        assertFalse(booking.getBookedDate().equals(new Date(2019,12,1)));
     }
 }

@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.math.MathContext;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MotorbikeTest {
@@ -20,12 +21,14 @@ class MotorbikeTest {
     @Test
     void getMotorbikeType() {
         assertTrue(vehicle.getMotorbikeType().equals("asd"));
+        assertFalse(vehicle.getMotorbikeType().equals("qwe"));
     }
 
     @Test
     void setMotorbikeType() {
         vehicle.setMotorbikeType("qwe");
         assertTrue(vehicle.getMotorbikeType().equals("qwe"));
+        assertFalse(vehicle.getMotorbikeType().equals("asd"));
     }
 
     @Test
@@ -37,6 +40,7 @@ class MotorbikeTest {
     void setHelmetProvided() {
         vehicle.setHelmetProvided(false);
         assertTrue(vehicle.isHelmetProvided() == false);
+        assertFalse(vehicle.isHelmetProvided() == true);
     }
 
     @Test
@@ -48,5 +52,6 @@ class MotorbikeTest {
     void setSideCarPresent() {
         vehicle.setSideCarPresent(false);
         assertTrue(vehicle.isSideCarPresent() == false);
+        assertFalse(vehicle.isSideCarPresent() == true);
     }
 }

@@ -190,7 +190,7 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setFuelType(String fuelType) {
-        if (InputValidator.stringWithLetters(fuelType)) {
+        if (InputValidator.stringWithNumbersAndLetters(fuelType)) {
             this.fuelType = fuelType;
         }
     }

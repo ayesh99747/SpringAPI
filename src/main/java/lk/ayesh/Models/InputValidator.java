@@ -29,7 +29,7 @@ public class InputValidator {
 
     //This is called to validate a integers
     public static boolean integers(int input) {
-        return input >= 0;
+        return input > 0;
     }
 
     //This is called to validate big decimals
@@ -44,7 +44,7 @@ public class InputValidator {
     }
 
     //This is called to validate passwords
-    public static boolean anyString(String password) {
+    public static boolean passwords(String password) {
         return (!password.equals("")) && (password != null);
     }
 }
