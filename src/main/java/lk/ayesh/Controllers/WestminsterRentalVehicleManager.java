@@ -38,12 +38,25 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         listOfVehicles.clear();
         System.out.println("Vehicles added to list");
         for (Vehicle vehicle : listOfVehiclesFromDb) {
-            listOfVehicles.add(vehicle);
-            System.out.println(vehicle);
+            if (vehicle.getScheduleForVehicle().getDropOffDate() != null && vehicle.getScheduleForVehicle().getPickUpDate() != null){
+                if (vehicle.getScheduleForVehicle().getDropOffDate().compareTo(new Date()) < 0){
+                    vehicle.getScheduleForVehicle().setDropOffDate(null);
+                    vehicle.getScheduleForVehicle().setPickUpDate(null);
+                    listOfVehicles.add(vehicle);
+                    System.out.println(vehicle);
+                }else {
+                    listOfVehicles.add(vehicle);
+                    System.out.println(vehicle);
+                }
+            }else {
+                listOfVehicles.add(vehicle);
+                System.out.println(vehicle);
+            }
         }
     }
 
     //This method returns true or false depending whether the given vehicle is present or not
+    @Override
     public boolean isVehiclePresent(String plateNumber) {
         for (Vehicle v1 : listOfVehicles) {
             if (plateNumber.equals(v1.getPlateNumber())) {
@@ -53,6 +66,8 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         return false;
     }
 
+    //This method updates the vehicle in the vehicle list once a booking is made
+    @Override
     public String updateVehicleSchedule(String plateNumber, Date pickUpDate, Date dropOffDate) {
         vehicleRepository.deleteAll();
         String totalAmount = null;
@@ -87,7 +102,9 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         }
     }
 
+
     //This method gets the vehicle requested using the plate number from the listOfVehicles
+    @Override
     public Vehicle getVehicle(String plateNumber) {
         for (Vehicle v1 : listOfVehicles) {
             if (plateNumber.equals(v1.getPlateNumber())) {
@@ -237,6 +254,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
     }
 
     //This method prints the list of vehicles from the listOfVehicles
+    @Override
     public void printListOfVehicles() {
         List<Vehicle> sortedListOfVehicles = listOfVehicles;
         sortedListOfVehicles.sort(Vehicle::compareTo);
@@ -257,6 +275,8 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         }
     }
 
+    //This method writes the list into a text file
+    @Override
     public void saveTextToFile() {
         List<Vehicle> sortedListOfVehicles = listOfVehicles;
         sortedListOfVehicles.sort(Vehicle::compareTo);

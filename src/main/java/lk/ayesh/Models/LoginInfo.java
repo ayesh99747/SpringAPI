@@ -1,14 +1,22 @@
 package lk.ayesh.Models;
 
-public class LoginInfo {
-    private String username;
-    private String password;
+/**
+ * This class is the Login Info
+ *
+ * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
+ */
 
+public class LoginInfo {
+    private String username;    //This is the username
+    private String password;    //This is the password
+
+    //This is the constructor
     public LoginInfo(String username, String password) {
         this.setUsername(username);
         this.setPassword(password);
     }
 
+    //These are the getters and setters
     public String getUsername() {
         return username;
     }
@@ -29,6 +37,7 @@ public class LoginInfo {
         }
     }
 
+    //This is the toString method
     @Override
     public String toString() {
         return "LoginInfo{" +

@@ -9,26 +9,32 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.Date;
 
+/**
+ * This class is the booking class.
+ *
+ * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
+ */
 @Data
 @Document(collection = "Bookings")
 public class Booking {
     @Id
-    private String BookingId;
+    private String BookingId;   //This is the booking id
 
     @Field("username")
-    private String username;
+    private String username;    //This is the username
     @Field("plateNumber")
-    private String plateNumber;
+    private String plateNumber; //This is the car plate number
     @Field("pickUpDate")
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd") //This is the pick up date
     private Date pickUpDate;
     @Field("dropOffDate")
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd") //This is the drop off date
     private Date dropOffDate;
     @Field("bookedDate")
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd") //This is the date it was booked
     private Date bookedDate;
 
+    //This is the booking constructor
     public Booking(String username, String plateNumber, Date pickUpDate, Date dropOffDate, Date bookedDate) {
         this.username = username;
         this.plateNumber = plateNumber;
@@ -37,6 +43,7 @@ public class Booking {
         this.bookedDate = bookedDate;
     }
 
+    //Following are the getters and setters
     public String getBookingId() {
         return BookingId;
     }
@@ -85,6 +92,7 @@ public class Booking {
         this.bookedDate = bookedDate;
     }
 
+    //This is the toString method
     @Override
     public String toString() {
         return "Booking{" +

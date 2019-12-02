@@ -18,13 +18,7 @@ public class ManagerLoginInfoApi {
     @Autowired
     private ManagerRepository managerRepository;
 
-    @GetMapping("")
-    @CrossOrigin(origins = "http://localhost:4200")
-    @ResponseBody
-    public List<Manager> allManagers() {
-        return ManagerLoginInfoManager.getListOfManagers();
-    }
-
+    //This url is used to validate a manager login
     @RequestMapping(value = "/validateLogin", method = RequestMethod.POST)
     @CrossOrigin(origins = "http://localhost:4200")
     @ResponseBody
@@ -40,6 +34,7 @@ public class ManagerLoginInfoApi {
         return false;
     }
 
+    //This url is used when adding a new manager
     @RequestMapping(value = "/addManager", method = RequestMethod.POST)
     @CrossOrigin(origins = "http://localhost:4200")
     @ResponseBody
@@ -48,6 +43,7 @@ public class ManagerLoginInfoApi {
         ManagerLoginInfoManager.addManagersFromDatabase(managerRepository.findAll());
     }
 
+    //This url is used to check if a username is unique
     @RequestMapping(value = "/isUsernamePresent", method = RequestMethod.GET)
     @CrossOrigin(origins = "http://localhost:4200")
     @ResponseBody
@@ -61,6 +57,7 @@ public class ManagerLoginInfoApi {
         return false;
     }
 
+    //This url is used when launching the console
     @GetMapping("/console")
     @ResponseBody
     @CrossOrigin(origins = "http://localhost:4200")

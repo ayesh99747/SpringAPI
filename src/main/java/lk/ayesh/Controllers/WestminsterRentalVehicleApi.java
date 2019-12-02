@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -181,6 +182,22 @@ public class WestminsterRentalVehicleApi {
             }
         }
         return listOfBookings;
+    }
+
+    @RequestMapping(value = "/getVehiclesToBeReturned", method = RequestMethod.GET)
+    @ResponseBody
+    @CrossOrigin(origins = "http://localhost:4200")
+    public List<Vehicle> getVehiclesToBeReturned() {
+        List<Vehicle> listOfVehicles = WestminsterRentalVehicleManager.getListOfVehicles();
+        List<Vehicle> listOfVehiclesToBeReturned = new ArrayList<>();
+        for (Vehicle v:listOfVehicles) {
+            if (v.getScheduleForVehicle().getDropOffDate() != null && v.getScheduleForVehicle().getPickUpDate() != null){
+                if (v.getScheduleForVehicle().getDropOffDate().compareTo(new Date())  == 0){
+                    listOfVehiclesToBeReturned.add(v);
+                }
+            }
+        }
+        return listOfVehiclesToBeReturned;
     }
 
     @GetMapping("/getAllCustomers")

@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 /**
- * This class is the Vehicle class
+ * This class is the Customer class
  *
  * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
  */
@@ -14,19 +14,20 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Document(collection = "Customers")
 public class Customer {
     @Id
-    private String Id;
+    private String Id;  //This stores the customer id
 
     @Field("customerName")
-    private String customerName;
+    private String customerName;//This is the customer name
     @Field("emailAddress")
-    private String emailAddress;
+    private String emailAddress;//This is the customer email address
     @Field("driversLicenseNumber")
-    private String driversLicenseNumber;
+    private String driversLicenseNumber;    //This is the driving license
     @Field("username")
-    private String username;
+    private String username;    //This is the username
     @Field("password")
-    private String password;
+    private String password;    //This is the password
 
+    //Following is the constructor
     public Customer(String customerName, String emailAddress, String driversLicenseNumber, String username, String password) {
         this.setCustomerName(customerName);
         this.setEmailAddress(emailAddress);
@@ -35,6 +36,7 @@ public class Customer {
         this.setPassword(password);
     }
 
+    //Following are the getters and setters
     public String getId() {
         return Id;
     }
@@ -93,6 +95,7 @@ public class Customer {
         }
     }
 
+    //Following is the to string method
     @Override
     public String toString() {
         return "Customer{" +

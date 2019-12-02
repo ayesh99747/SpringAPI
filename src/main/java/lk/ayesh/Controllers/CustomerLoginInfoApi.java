@@ -15,13 +15,7 @@ public class CustomerLoginInfoApi {
     @Autowired
     private CustomerRepository customerRepository;
 
-    @GetMapping("")
-    @CrossOrigin(origins = "http://localhost:4200")
-    @ResponseBody
-    public List<Customer> allCustomers() {
-        return CustomerLoginInfoManager.getListOfCustomers();
-    }
-
+    //This url is used if a new customer is to be added
     @RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
     @CrossOrigin(origins = "http://localhost:4200")
     @ResponseBody
@@ -30,6 +24,7 @@ public class CustomerLoginInfoApi {
         CustomerLoginInfoManager.addCustomerFromDatabase(customerRepository.findAll());
     }
 
+    //This url is used to check if a username is unique and returns a boolean accordingly
     @RequestMapping(value = "isUsernamePresent", method = RequestMethod.GET)
     @CrossOrigin(origins = "http://localhost:4200")
     @ResponseBody

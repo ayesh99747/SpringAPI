@@ -16,10 +16,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.List;
 
 @SpringBootApplication
+@EnableScheduling
 public class DemoApplication implements CommandLineRunner {
 
     @Autowired
@@ -62,5 +65,4 @@ public class DemoApplication implements CommandLineRunner {
         BookingManagerManager.addBookingsFromDatabase(listOfBookingsFromDb);
 
     }
-
 }
