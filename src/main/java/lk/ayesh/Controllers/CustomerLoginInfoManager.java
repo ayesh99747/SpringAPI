@@ -27,13 +27,4 @@ public class CustomerLoginInfoManager {
         }
     }
 
-    public static String getCustomerEmail(String username) {
-        String emailAddress = null;
-        for (Customer c : listOfCustomers) {
-            if (username.equals(c.getUsername())) {
-                emailAddress = c.getEmailAddress();
-            }
-        }
-        return emailAddress;
-    }
 }

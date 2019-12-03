@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/bookings")
 public class BookingManagerApi {
     @Autowired
-    BookingManagerManager bms;
+    BookingsManager bms;
 
     @Autowired
     WestminsterRentalVehicleManager vm1;

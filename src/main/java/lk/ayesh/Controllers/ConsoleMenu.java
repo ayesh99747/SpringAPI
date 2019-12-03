@@ -109,7 +109,7 @@ public class ConsoleMenu {
     }
 
     private void saveToTextFile() {
-        vm1.saveTextToFile();
+        vm1.saveToTextFile();
     }
 
     /*

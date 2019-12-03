@@ -27,7 +27,7 @@ public interface RentalVehicleManager {
 
     void generateReport() throws IOException;//This method generates the report
 
-    void saveTextToFile();//This method writes the vehicle list into a text file
+    void saveToTextFile();//This method writes the vehicle list into a text file
 
     void saveToDatabase();//This method saves the data to the database
 

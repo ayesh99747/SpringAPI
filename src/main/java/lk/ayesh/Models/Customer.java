@@ -80,7 +80,7 @@ public class Customer {
     }
 
     public void setUsername(String username) {
-        if (InputValidator.stringWithLetters(username)) {
+        if (InputValidator.stringWithNumbersAndLetters(username)) {
             this.username = username;
         }
     }

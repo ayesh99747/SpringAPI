@@ -1,6 +1,7 @@
 package lk.ayesh.Models;
 
 import java.util.Date;
+
 /**
  * This class is the Schedule class
  *
@@ -18,7 +19,7 @@ public class Schedule {
 
     //This is used when a vehicle is booked
     public Schedule(Date pickUpDate, Date dropOffDate) {
-        if (dropOffDate.compareTo(pickUpDate) == 1) {
+        if (dropOffDate.compareTo(pickUpDate) >= 0) {
             this.pickUpDate = pickUpDate;
             this.dropOffDate = dropOffDate;
         } else {

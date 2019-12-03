@@ -3,9 +3,15 @@ package lk.ayesh.Models;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * This class is the Test class for the InputValidator class
+ * This test class tests all validation methods
+ *
+ * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
+ */
 class InputValidatorTest {
 
+    //This tests strings with numbers only
     @Test
     void stringWithNumbers() {
         assertTrue(InputValidator.stringWithNumbers("333"));
@@ -14,6 +20,7 @@ class InputValidatorTest {
         assertFalse(InputValidator.stringWithNumbers(""));
     }
 
+    //This tests strings with letters only
     @Test
     void stringWithLetters() {
         assertTrue(InputValidator.stringWithLetters("asd"));
@@ -22,6 +29,7 @@ class InputValidatorTest {
         assertFalse(InputValidator.stringWithLetters(""));
     }
 
+    //This tests strings with numbers and letters only
     @Test
     void stringWithNumbersAndLetters() {
         assertTrue(InputValidator.stringWithNumbersAndLetters("asd"));
@@ -31,6 +39,8 @@ class InputValidatorTest {
         assertFalse(InputValidator.stringWithNumbersAndLetters(""));
     }
 
+    /*This tests plate numbers only
+    * plate numbers can contain letters, numbers and '-' only*/
     @Test
     void plateNumbers() {
         assertTrue(InputValidator.plateNumbers("asd"));
@@ -41,6 +51,8 @@ class InputValidatorTest {
         assertFalse(InputValidator.plateNumbers(""));
     }
 
+    /*This tests integers only
+    * Integers are numbers with a value greater than 0*/
     @Test
     void integers() {
         assertTrue(InputValidator.integers(33));
@@ -49,6 +61,8 @@ class InputValidatorTest {
         assertFalse(InputValidator.integers(-1));
     }
 
+    /*This test big decimals only
+    * big decimals are big decimal objects with a value greater than 0*/
     @Test
     void bigDecimals() {
         assertTrue(InputValidator.bigDecimals(33.0));
@@ -56,6 +70,8 @@ class InputValidatorTest {
         assertFalse(InputValidator.bigDecimals(0));
     }
 
+    /*This tests email addresses only
+    * email addresses can contain numbers,letter,'@','_' and '.' only*/
     @Test
     void emailAddress() {
         assertTrue(InputValidator.emailAddress("asd"));
@@ -68,6 +84,8 @@ class InputValidatorTest {
         assertFalse(InputValidator.emailAddress(""));
     }
 
+    /*This tests passwords only
+    * Passwords contain any character but must not be null*/
     @Test
     void passwords() {
         assertTrue(InputValidator.passwords("asd"));

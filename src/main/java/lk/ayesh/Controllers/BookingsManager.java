@@ -14,7 +14,7 @@ import java.util.List;
  * @author Ayeshmantha Wijayagunathilaka (ID: 2018072)
  */
 @Service
-public class BookingManagerManager {
+public class BookingsManager {
     private static List<Booking> listOfBookings = new ArrayList<Booking>();//This is the bookings list
     @Autowired
     private BookingRepository bookingRepository;

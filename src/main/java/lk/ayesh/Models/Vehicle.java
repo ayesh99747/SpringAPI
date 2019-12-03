@@ -92,7 +92,7 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     }
 
     public void setMake(String make) {
-        if (InputValidator.stringWithLetters(make)) {
+        if (InputValidator.stringWithNumbersAndLetters(make)) {
             this.make = make;
         }
     }

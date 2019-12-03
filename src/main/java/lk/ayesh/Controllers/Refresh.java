@@ -1,12 +1,12 @@
 package lk.ayesh.Controllers;
 
-import jdk.jfr.Event;
 import lk.ayesh.Models.Vehicle;
 import lk.ayesh.Repositories.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.List;
+
 /**
  * This class is the refresh class
  * This is called everyday midnight

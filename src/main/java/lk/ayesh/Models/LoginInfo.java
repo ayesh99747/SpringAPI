@@ -32,7 +32,7 @@ public class LoginInfo {
     }
 
     public void setPassword(String password) {
-        if (InputValidator.stringWithNumbersAndLetters(password)) {
+        if (InputValidator.passwords(password)) {
             this.password = password;
         }
     }

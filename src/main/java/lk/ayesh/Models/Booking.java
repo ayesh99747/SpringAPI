@@ -36,8 +36,8 @@ public class Booking {
 
     //This is the booking constructor
     public Booking(String username, String plateNumber, Date pickUpDate, Date dropOffDate, Date bookedDate) {
-        this.username = username;
-        this.plateNumber = plateNumber;
+        this.setUsername(username);
+        this.setPlateNumber(plateNumber);
         this.pickUpDate = pickUpDate;
         this.dropOffDate = dropOffDate;
         this.bookedDate = bookedDate;
@@ -57,7 +57,9 @@ public class Booking {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        if (InputValidator.stringWithNumbersAndLetters(username)) {
+            this.username = username;
+        }
     }
 
     public String getPlateNumber() {
@@ -65,7 +67,9 @@ public class Booking {
     }
 
     public void setPlateNumber(String plateNumber) {
-        this.plateNumber = plateNumber;
+        if (InputValidator.plateNumbers(plateNumber)) {
+            this.plateNumber = plateNumber;
+        }
     }
 
     public Date getPickUpDate() {

@@ -14,17 +14,17 @@ public class InputValidator {
 
     //This is called to validate a string with letters only
     public static boolean stringWithLetters(String input) {
-        return (!input.equals("")) && (input != null) && (input.matches("^[a-zA-Z]*$"));
+        return (!input.equals("")) && (input != null) && (input.matches("^[a-zA-Z ]+"));
     }
 
     //This is called to validate a string with numbers and letters only
     public static boolean stringWithNumbersAndLetters(String input) {
-        return (!input.equals("")) && (input != null) && (input.matches("^[a-zA-Z0-9]*$"));
+        return (!input.equals("")) && (input != null) && (input.matches("^[a-zA-Z0-9 ]+"));
     }
 
     //This is called to validate a plate number because it has number,letters and a '-'
     public static boolean plateNumbers(String input) {
-        return (!input.equals("")) && (input != null) && (input.matches("^[a-zA-Z0-9-]*$"));
+        return (!input.equals("")) && (input != null) && (input.matches("^[a-zA-Z0-9- ]+"));
     }
 
     //This is called to validate a integers

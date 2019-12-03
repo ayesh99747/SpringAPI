@@ -38,17 +38,17 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         listOfVehicles.clear();
         System.out.println("Vehicles added to list");
         for (Vehicle vehicle : listOfVehiclesFromDb) {
-            if (vehicle.getScheduleForVehicle().getDropOffDate() != null && vehicle.getScheduleForVehicle().getPickUpDate() != null){
-                if (vehicle.getScheduleForVehicle().getDropOffDate().compareTo(new Date()) < 0){
+            if (vehicle.getScheduleForVehicle().getDropOffDate() != null && vehicle.getScheduleForVehicle().getPickUpDate() != null) {
+                if (vehicle.getScheduleForVehicle().getDropOffDate().compareTo(new Date()) < 0) {
                     vehicle.getScheduleForVehicle().setDropOffDate(null);
                     vehicle.getScheduleForVehicle().setPickUpDate(null);
                     listOfVehicles.add(vehicle);
                     System.out.println(vehicle);
-                }else {
+                } else {
                     listOfVehicles.add(vehicle);
                     System.out.println(vehicle);
                 }
-            }else {
+            } else {
                 listOfVehicles.add(vehicle);
                 System.out.println(vehicle);
             }
@@ -276,7 +276,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
 
     //This method writes the list into a text file
     @Override
-    public void saveTextToFile() {
+    public void saveToTextFile() {
         List<Vehicle> sortedListOfVehicles = listOfVehicles;
         sortedListOfVehicles.sort(Vehicle::compareTo);
         File file = new File("Vehicle Stock List.txt");
